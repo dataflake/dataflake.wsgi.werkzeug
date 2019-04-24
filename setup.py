@@ -46,7 +46,6 @@ setup(
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
-        'Framework :: CherryPy',
         'Framework :: Zope',
         'Framework :: Zope :: 4',
         'Intended Audience :: System Administrators',
