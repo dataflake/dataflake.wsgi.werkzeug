@@ -26,7 +26,7 @@ class ConfigBuilderTests(unittest.TestCase):
 
     def test_argument_switch(self):
         # Patch a fake object for the mkwsgiinstance import
-        from dataflake.wsgi.cheroot import configurator
+        from dataflake.wsgi.werkzeug import configurator
         old_impl = configurator.mkwsgiinstance
         configurator.mkwsgiinstance = FakeMkwsgiinstance()
 

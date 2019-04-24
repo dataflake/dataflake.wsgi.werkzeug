@@ -11,8 +11,6 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
-import logging
-
 from werkzeug.debug import DebuggedApplication
 from werkzeug.serving import run_simple
 
@@ -30,7 +28,7 @@ def _makeBool(value, default=True):
 
 
 def _sanitizeParameters(kw):
-    """ Clean up parameters so the server can work with them 
+    """ Clean up parameters so the server can work with them
 
     Separates out host/port values and removes them from mapping.
 
@@ -38,10 +36,12 @@ def _sanitizeParameters(kw):
     for the debugger.
     """
     debugger_kw = {}
+    host = '0.0.0.0'
+
     if 'hostname' in kw:
-        host = kw.pop('hostname', '0.0.0.0')
+        host = kw.pop('hostname')
     elif 'host' in kw:
-        host = kw.pop('host', '0.0.0.0')
+        host = kw.pop('host')
     port = int(kw.pop('port', '8080'))
 
     for key in ('use_evalex', 'pin_security', 'pin_logging'):

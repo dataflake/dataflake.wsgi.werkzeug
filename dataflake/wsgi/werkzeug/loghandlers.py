@@ -29,6 +29,8 @@ def _startsWithIP(msg):
 
     first_element = msg.split(' ', 1)[0]
     try:
+        if isinstance(first_element, bytes):
+            first_element = first_element.decode('UTF-8')
         ipaddress.ip_address(first_element)
         return True
     except ValueError:
