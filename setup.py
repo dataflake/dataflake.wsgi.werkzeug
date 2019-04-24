@@ -66,19 +66,20 @@ setup(
     install_requires=[
         'setuptools',
         'werkzeug',
-        'paste',  # For the translogger logging filter
         'Zope',  # To avoid reinventing the skeleton creation
+        'ipaddress ; python_version=="2.7"',
     ],
     extras_require={
         'docs': [
-            'Sphinx < 2;python_version < "3"',
-            'Sphinx;python_version >= "3"',
+            'Sphinx < 2 ; python_version < "3"',
+            'Sphinx ; python_version >= "3"',
             'sphinx_rtd_theme',
         ],
     },
     entry_points={
         'paste.server_runner': [
             'main=dataflake.wsgi.werkzeug:serve_paste',
+            'debugger=dataflake.wsgi.werkzeug:serve_debugger',
         ],
         'console_scripts': [
             'mkwerkzeuginstance=dataflake.wsgi.werkzeug.configurator:mkzope',

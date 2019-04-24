@@ -7,18 +7,12 @@ use = egg:dataflake.wsgi.werkzeug#main
 host = 127.0.0.1
 port = 8080
 
-[filter:translogger]
-use = egg:Paste#translogger
-setup_console_handler = False
-
 [pipeline:main]
 pipeline =
-    egg:Zope#httpexceptions
-    translogger
     zope
 
 [loggers]
-keys = root, werkzeug.error, wsgi
+keys = root, werkzeug
 
 [handlers]
 keys = console, accesslog, eventlog
@@ -37,31 +31,25 @@ format = %(message)s
 level = INFO
 handlers = console, eventlog
 
-[logger_werkzeug.error]
+[logger_werkzeug]
 level = INFO
-handlers =
-qualname = werkzeug.error
-
-[logger_wsgi]
-level = WARN
-handlers = accesslog
-qualname = wsgi
-propagate = 0
+handlers = accesslog, eventlog, console
+qualname = werkzeug
 
 [handler_console]
-class = StreamHandler
+class = dataflake.wsgi.werkzeug.loghandlers.ConsoleHandler
 args = (sys.stderr,)
 level = NOTSET
 formatter = generic
 
 [handler_accesslog]
-class = FileHandler
+class = dataflake.wsgi.werkzeug.loghandlers.AccessLogHandler
 args = ('<<INSTANCE_HOME>>/var/log/Z4.log','a')
 level = INFO
 formatter = message
 
 [handler_eventlog]
-class = FileHandler
+class = dataflake.wsgi.werkzeug.loghandlers.EventLogHandler
 args = ('<<INSTANCE_HOME>>/var/log/event.log', 'a')
 level = INFO
 formatter = generic
