@@ -25,6 +25,12 @@ the `werkzeug WSGI server <https://werkzeug.palletsprojects.com>`_ into an
 environment that uses PasteDeploy-style ``.ini`` files to compose a WSGI
 application.
 
+A second entry point will enable the ``werkzeug`` debugger, so you get nice
+clickable tracebacks with the ability to open a console prompt at any point in
+the stack. The debugger is `explained in the werkzeug documentation 
+<https://werkzeug.palletsprojects.com/debug/>`_ and **should never be running 
+in production**.
+
 It also includes a script to create a basic WSGI configuration file for Zope,
 similar to Zope's own ``mkwsgiinstance``, but specifying ``werkzeug`` instead of
 ``waitress`` as WSGI server.
