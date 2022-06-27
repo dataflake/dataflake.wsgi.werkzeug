@@ -39,7 +39,7 @@ setup(
     license='ZPL 2.1',
     description='PasteDeploy entry point for the werkzeug WSGI server',
     author='Jens Vagelpohl and Contributors',
-    author_email='jens@netz.ooo',
+    author_email='jens@plyp.com',
     long_description=(read('README.rst') + '\n\n' + read('CHANGES.rst')),
     packages=find_packages('src'),
     package_dir={'': 'src'},
