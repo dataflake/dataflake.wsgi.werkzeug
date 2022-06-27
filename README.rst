@@ -18,7 +18,7 @@
 
 
 dataflake.wsgi.werkzeug
-======================
+=======================
 
 This package provides a PasteDeploy-compatible entry point to easily integrate
 the `werkzeug WSGI server <https://werkzeug.palletsprojects.com>`_ into an
