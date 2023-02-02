@@ -28,7 +28,7 @@ def read(*rnames):
 
 setup(
     name=NAME,
-    version='2.0.dev0',
+    version='2.0',
     url=URL,
     project_urls={
         'Documentation': 'https://dataflakewsgiwerkzeug.readthedocs.io',
