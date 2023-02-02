@@ -1,6 +1,6 @@
 ##############################################################################
 #
-# Copyright (c) 2019 Jens Vagelpohl and Contributors.
+# Copyright (c) 2019-2023 Jens Vagelpohl and Contributors.
 # All Rights Reserved.
 #
 # This software is subject to the provisions of the Zope Public License,

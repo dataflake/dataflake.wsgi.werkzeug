@@ -1,6 +1,6 @@
 ##############################################################################
 #
-# Copyright (c) 2019 Jens Vagelpohl and Contributors.
+# Copyright (c) 2019-2023 Jens Vagelpohl and Contributors.
 # All Rights Reserved.
 #
 # This software is subject to the provisions of the Zope Public License,
@@ -17,23 +17,20 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-NAME = 'dataflake.wsgi.werkzeug'
-URL = f'https://github.com/dataflake/{NAME}'
-
-
 def read(*rnames):
     with open(os.path.join(os.path.dirname(__file__), *rnames)) as f:
         return f.read()
 
 
 setup(
-    name=NAME,
+    name='dataflake.wsgi.werkzeug',
     version='2.1.dev0',
-    url=URL,
+    url='https://github.com/dataflake/dataflake.wsgi.werkzeug',
     project_urls={
         'Documentation': 'https://dataflakewsgiwerkzeug.readthedocs.io',
-        'Issue Tracker': f'{URL}/issues',
-        'Sources': URL,
+        'Issue Tracker': ('https://github.com/dataflake/'
+                          'dataflake.wsgi.werkzeug/issues'),
+        'Sources': 'https://github.com/dataflake/dataflake.wsgi.werkzeug',
     },
     license='ZPL 2.1',
     description='PasteDeploy entry point for the werkzeug WSGI server',
@@ -71,6 +68,7 @@ setup(
         'docs': [
             'Sphinx',
             'sphinx_rtd_theme',
+            'pkginfo',
         ],
     },
     entry_points={
