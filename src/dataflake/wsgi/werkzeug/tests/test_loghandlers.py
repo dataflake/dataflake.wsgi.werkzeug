@@ -18,7 +18,7 @@ IPv6 = '2001:4800:1be1:500:2bd2:ef:d1ed:df14'
 IPv4 = '72.32.182.192'
 
 
-class FakeRecord(object):
+class FakeRecord:
 
     def __init__(self, msg):
         setattr(self, 'msg', msg)

@@ -16,7 +16,7 @@ import sys
 import unittest
 
 
-class FakeMkwsgiinstance(object):
+class FakeMkwsgiinstance:
 
     def main(self):
         pass
