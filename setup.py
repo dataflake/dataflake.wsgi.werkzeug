@@ -18,8 +18,7 @@ from setuptools import setup
 
 
 NAME = 'dataflake.wsgi.werkzeug'
-URL = 'https://github.com/dataflake/%s' % NAME
-VERSION = '1.2.dev0'
+URL = f'https://github.com/dataflake/{NAME}'
 
 
 def read(*rnames):
@@ -29,56 +28,48 @@ def read(*rnames):
 
 setup(
     name=NAME,
-    version=VERSION,
+    version='2.0.dev0',
     url=URL,
     project_urls={
         'Documentation': 'https://dataflakewsgiwerkzeug.readthedocs.io',
-        'Issue Tracker': '%s/issues' % URL,
+        'Issue Tracker': f'{URL}/issues',
         'Sources': URL,
     },
     license='ZPL 2.1',
     description='PasteDeploy entry point for the werkzeug WSGI server',
     author='Jens Vagelpohl and Contributors',
-    author_email='jens@plyp.com',
+    author_email='jens@dataflake.org',
     long_description=(read('README.rst') + '\n\n' + read('CHANGES.rst')),
     packages=find_packages('src'),
     package_dir={'': 'src'},
     namespace_packages=['dataflake', 'dataflake.wsgi'],
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
         'Framework :: Zope',
-        'Framework :: Zope :: 4',
         'Framework :: Zope :: 5',
         'Intended Audience :: System Administrators',
         'License :: OSI Approved :: Zope Public License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: Implementation :: CPython',
         'Topic :: Internet :: WWW/HTTP :: WSGI',
     ],
-    python_requires='>=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*',
+    python_requires='>=3.7',
     install_requires=[
         'setuptools',
-        'werkzeug < 2; python_version <= "3.5"',
-        'werkzeug < 2.1; python_version == "3.6"',
-        'werkzeug; python_version > "3.6"',
-        'Zope',  # To avoid reinventing the skeleton creation
-        'ipaddress ; python_version=="2.7"',
+        'werkzeug',
+        'Zope >= 5',  # To avoid reinventing the skeleton creation
     ],
     extras_require={
         'docs': [
-            'Sphinx < 2 ; python_version < "3"',
-            'Sphinx ; python_version >= "3"',
+            'Sphinx',
             'sphinx_rtd_theme',
         ],
     },

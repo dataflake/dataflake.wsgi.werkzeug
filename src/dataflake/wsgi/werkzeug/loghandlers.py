@@ -60,19 +60,19 @@ class EventLogFilter(logging.Filter):
 class AccessLogHandler(logging.FileHandler):
 
     def __init__(self, *args, **kw):
-        super(AccessLogHandler, self).__init__(*args, **kw)
+        super().__init__(*args, **kw)
         self.addFilter(AccessLogFilter())
 
 
 class EventLogHandler(logging.FileHandler):
 
     def __init__(self, *args, **kw):
-        super(EventLogHandler, self).__init__(*args, **kw)
+        super().__init__(*args, **kw)
         self.addFilter(EventLogFilter())
 
 
 class ConsoleHandler(logging.StreamHandler):
 
     def __init__(self, *args, **kw):
-        super(ConsoleHandler, self).__init__(*args, **kw)
+        super().__init__(*args, **kw)
         self.addFilter(EventLogFilter())
