@@ -18,8 +18,7 @@ from setuptools import setup
 
 
 NAME = 'dataflake.wsgi.werkzeug'
-URL = 'https://github.com/dataflake/%s' % NAME
-VERSION = '1.2.dev0'
+URL = f'https://github.com/dataflake/{NAME}'
 
 
 def read(*rnames):
@@ -29,11 +28,11 @@ def read(*rnames):
 
 setup(
     name=NAME,
-    version=VERSION,
+    version='2.0.dev0',
     url=URL,
     project_urls={
         'Documentation': 'https://dataflakewsgiwerkzeug.readthedocs.io',
-        'Issue Tracker': '%s/issues' % URL,
+        'Issue Tracker': f'{URL}/issues',
         'Sources': URL,
     },
     license='ZPL 2.1',
@@ -63,6 +62,7 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: Implementation :: CPython',
         'Topic :: Internet :: WWW/HTTP :: WSGI',
     ],
