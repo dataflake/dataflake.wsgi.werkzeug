@@ -24,7 +24,7 @@ def read(*rnames):
 
 setup(
     name='dataflake.wsgi.werkzeug',
-    version='2.1.dev0',
+    version='2.1',
     url='https://github.com/dataflake/dataflake.wsgi.werkzeug',
     project_urls={
         'Documentation': 'https://dataflakewsgiwerkzeug.readthedocs.io',
@@ -55,6 +55,7 @@ setup(
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
         'Programming Language :: Python :: Implementation :: CPython',
         'Topic :: Internet :: WWW/HTTP :: WSGI',
     ],
