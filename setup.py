@@ -13,7 +13,6 @@
 ##############################################################################
 import os
 
-from setuptools import find_packages
 from setuptools import setup
 
 
@@ -37,9 +36,8 @@ setup(
     author='Jens Vagelpohl and Contributors',
     author_email='jens@dataflake.org',
     long_description=(read('README.rst') + '\n\n' + read('CHANGES.rst')),
-    packages=find_packages('src'),
+    packages=['dataflake.wsgi.werkzeug'],
     package_dir={'': 'src'},
-    namespace_packages=['dataflake', 'dataflake.wsgi'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
